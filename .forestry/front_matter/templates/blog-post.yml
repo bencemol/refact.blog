@@ -23,8 +23,14 @@ fields:
 - name: sections
   type: blocks
   label: Sections
-  template_types: []
+  template_types:
+  - blog-post-section
   config:
     min: 1
     max: 
   description: Blog post sections
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+  description: Blog post tags
