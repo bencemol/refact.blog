@@ -6,7 +6,7 @@ tags:
 - asdasd
 title: test post
 summary: test post summary
-cover: "/uploads/copertina.jpg"
+cover: ''
 sections:
 - template: blog-post-section
   title: test section
