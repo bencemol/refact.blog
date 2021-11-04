@@ -16,3 +16,5 @@ This is a test post from [forestry.io](forestry.io)
 
     const message: string = 'Hello, World!';
     console.log(message);
+
+Here have some inline `code`
