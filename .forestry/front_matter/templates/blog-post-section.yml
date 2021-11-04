@@ -1,6 +1,6 @@
 ---
 label: blog post section
-hide_body: true
+hide_body: false
 fields:
 - name: title
   type: text
@@ -8,16 +8,6 @@ fields:
     required: true
   label: Title
   description: Blog post section title
-- name: text
-  type: textarea
-  default: ''
-  config:
-    required: true
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Text
-  description: Blog post section text
 - name: gist
   type: textarea
   default: ''
