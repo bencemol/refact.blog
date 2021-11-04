@@ -1,4 +1,30 @@
 ---
 label: blog post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Blog post title
+- name: summary
+  type: text
+  config:
+    required: false
+  label: Summary
+  description: Blog post short summary
+- name: cover
+  type: file
+  config:
+    maxSize: 64
+  label: Cover
+  description: Blog post cover image
+- name: sections
+  type: blocks
+  label: Sections
+  template_types: []
+  config:
+    min: 1
+    max: 
+  description: Blog post sections
