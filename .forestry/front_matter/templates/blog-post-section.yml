@@ -1,4 +1,30 @@
 ---
 label: blog post section
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Blog post section title
+- name: text
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Text
+  description: Blog post section text
+- name: gist
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: gist
+  description: Blog post section code snippet
