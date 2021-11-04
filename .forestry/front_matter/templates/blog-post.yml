@@ -34,3 +34,5 @@ fields:
   default: []
   label: Tags
   description: Blog post tags
+pages:
+- posts/test-post.md
