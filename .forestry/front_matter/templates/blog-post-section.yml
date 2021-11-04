@@ -1,6 +1,7 @@
 ---
 label: blog post section
 hide_body: false
+display_field: title
 fields:
 - name: title
   type: text
@@ -8,13 +9,3 @@ fields:
     required: true
   label: Title
   description: Blog post section title
-- name: gist
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: gist
-  description: Blog post section code snippet
