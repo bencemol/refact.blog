@@ -20,15 +20,6 @@ fields:
     maxSize: 64
   label: Cover
   description: Blog post cover image
-- name: sections
-  type: blocks
-  label: Sections
-  template_types:
-  - section
-  config:
-    min: 1
-    max: 
-  description: Blog post sections
 - name: tags
   type: tag_list
   default: []
