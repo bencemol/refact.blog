@@ -41,5 +41,20 @@ fields:
   default: []
   label: Tags
   description: Blog post tags
+- name: layout
+  type: select
+  default: "../layouts/post.astro"
+  config:
+    required: true
+    options:
+    - "../layouts/post.astro"
+    - "../layouts/workshop.astro"
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Layout
+  description: Astro layout component
 pages:
 - src/posts/test-post-1.md
