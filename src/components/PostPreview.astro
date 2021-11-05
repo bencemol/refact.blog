@@ -1,6 +1,8 @@
 ---
+import { CMS } from '../models/cms';
+
 export interface Props {
-  post: any;
+  post: CMS.Post;
 }
 const { post } = Astro.props;
 

@@ -3,16 +3,16 @@ import Head from '../components/Head.astro';
 import PostPreview from '../components/PostPreview.astro';
 import Pagination from '../components/Pagination.astro';
 import { env } from '../environment';
+import { CMS } from '../models/cms';
 
 // page
 const { title, description } = env;
 
 // collection
 // note: we want to show first 3 posts here, but we don’t want to paginate at /1, /2, /3, etc.
-// so we show a preview of posts here, but actually paginate from $posts.astro
-let allPosts = Astro.fetchContent('../posts/*.md');
+const allPosts: CMS.Post[] = Astro.fetchContent('../posts/*.md');
 allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-let firstPage = allPosts.slice(0, 2);
+const firstPage = allPosts.slice(0, 2);
 ---
 
 <html>
@@ -20,7 +20,7 @@ let firstPage = allPosts.slice(0, 2);
     <Head
       title={title}
       description={description}
-      image={firstPage[0].image}
+      image={firstPage[0].cover}
       canonicalURL={Astro.request.canonicalURL.href}
     />
   </head>

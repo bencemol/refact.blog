@@ -4,9 +4,6 @@ import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 import { env } from '../../environment';
 
-// page
-const { title, description } = env;
-
 export async function getStaticPaths({paginate, rss}) {
   const allPosts = Astro.fetchContent('../../posts/*.md');
   allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
@@ -28,6 +25,7 @@ export async function getStaticPaths({paginate, rss}) {
   return paginate(allPosts,  { pageSize: 2 });
 }
 
+const { title, description } = env;
 const { page } = Astro.props;
 ---
 
