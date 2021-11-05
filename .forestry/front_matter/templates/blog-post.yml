@@ -41,19 +41,5 @@ fields:
   default: []
   label: Tags
   description: Blog post tags
-- name: layout
-  type: select
-  default: "../layouts/post.astro"
-  config:
-    required: true
-    options:
-    - "../layouts/post.astro"
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Layout
-  description: Blog post layout (maps to astro layout)
 pages:
 - src/posts/test-post-1.md
