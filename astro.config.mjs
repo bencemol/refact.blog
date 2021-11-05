@@ -12,5 +12,8 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
   renderers: ['@astrojs/renderer-svelte'],
   buildOptions: {
     site: "https://refact.blog"
+  },
+  devOptions: {
+    dist: "dist/"
   }
 });

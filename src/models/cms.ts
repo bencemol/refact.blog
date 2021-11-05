@@ -4,8 +4,9 @@ export namespace CMS {
     description: string;
     date: string;
     url: string;
-    cover: string;
+    cover?: string;
     content: string;
+    tags: string[];
   };
 }
 
