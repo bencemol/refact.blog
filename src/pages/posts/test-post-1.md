@@ -6,7 +6,7 @@ tags:
 - ipsum
 title: test post 1
 description: quo adipisci enim quam ut ab
-cover: assets/img/azva3uz.jpg
+cover: /assets/img/azva3uz.jpg
 layout: "../../layouts/post.astro"
 canonicalUrl: asd
 

@@ -9,5 +9,3 @@ export namespace CMS {
     tags: string[];
   };
 }
-
-export const _ = undefined;

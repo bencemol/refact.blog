@@ -37,12 +37,12 @@ fields:
   description: Blog post tags
 - name: layout
   type: select
-  default: "../layouts/post.astro"
+  default: "../../layouts/post.astro"
   config:
     required: true
     options:
-    - "../layouts/post.astro"
-    - "../layouts/workshop.astro"
+    - "../../layouts/post.astro"
+    - "../../layouts/workshop.astro"
     source:
       type: simple
       section: 
