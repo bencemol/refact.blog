@@ -30,7 +30,7 @@ fields:
     maxSize: 64
   label: Cover
   description: Blog post cover image
-- name: url
+- name: canonicalUrl
   type: text
   config:
     required: true
