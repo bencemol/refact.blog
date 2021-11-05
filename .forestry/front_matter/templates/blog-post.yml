@@ -8,22 +8,36 @@ fields:
     required: true
   label: Title
   description: Blog post title
-- name: summary
+- name: description
   type: text
   config:
     required: false
   label: Summary
   description: Blog post short summary
+- name: date
+  type: datetime
+  label: Date
+  description: Blog post date
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
 - name: cover
   type: file
   config:
     maxSize: 64
   label: Cover
   description: Blog post cover image
+- name: url
+  type: text
+  config:
+    required: true
+  label: Url
+  description: Blog post url
 - name: tags
   type: tag_list
   default: []
   label: Tags
   description: Blog post tags
-pages:
-- posts/test-post.md
