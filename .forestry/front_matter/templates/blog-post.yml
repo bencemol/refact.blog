@@ -47,7 +47,7 @@ fields:
   config:
     required: true
     options:
-    - "../../layouts/post.astro"
+    - "../layouts/post.astro"
     source:
       type: simple
       section: 
