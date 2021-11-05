@@ -1,5 +1,5 @@
 ---
-date: 2021-11-05T14:56:03+01:00
+date: 2021-11-05T14:56:03.000+01:00
 tags:
 - test
 - frontend
@@ -8,6 +8,7 @@ title: test post 1
 description: quo adipisci enim quam ut ab
 cover: assets/img/azva3uz.jpg
 url: posts/test-post-1
+layout: "../layouts/post.astro"
 
 ---
 # This is a heading
