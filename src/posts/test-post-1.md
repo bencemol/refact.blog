@@ -8,7 +8,6 @@ title: test post 1
 description: quo adipisci enim quam ut ab
 cover: assets/img/azva3uz.jpg
 url: posts/test-post-1
-layout: "../layouts/post.astro"
 
 ---
 # This is a heading
