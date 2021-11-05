@@ -1,40 +1,38 @@
 ---
-import Counter from '../components/Counter.svelte'
+import Head from '../components/Head.astro';
+import PostPreview from '../components/PostPreview.astro';
+import Pagination from '../components/Pagination.astro';
+import { env } from '../environment';
+
+// page
+const { title, description } = env;
+
+// collection
+// note: we want to show first 3 posts here, but we don’t want to paginate at /1, /2, /3, etc.
+// so we show a preview of posts here, but actually paginate from $posts.astro
+let allPosts = Astro.fetchContent('../posts/*.md');
+allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+let firstPage = allPosts.slice(0, 2);
 ---
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width"
+    <Head
+      title={title}
+      description={description}
+      image={firstPage[0].image}
+      canonicalURL={Astro.request.canonicalURL.href}
     />
-
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <style>
-      :global(:root) {
-        font-family: system-ui;
-        padding: 2em 0;
-      }
-      :global(.counter) {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        place-items: center;
-        font-size: 2em;
-        margin-top: 2em;
-      }
-      :global(.children) {
-        display: grid;
-        place-items: center;
-        margin-bottom: 2em;
-      }
-    </style>
   </head>
+
   <body>
-    <main>
-      <Counter client:visible>
-        <h1>Hello Svelte!</h1>
-      </Counter>
+
+    <main class="wrapper">
+      {firstPage.map((post) => <PostPreview post={post} />)}
     </main>
+
+    <footer>
+      <Pagination nextUrl="/posts/2" />
+    </footer>
   </body>
 </html>

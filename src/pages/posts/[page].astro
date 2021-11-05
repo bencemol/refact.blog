@@ -1,0 +1,75 @@
+---
+import Head from '../../components/Head.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Pagination from '../../components/Pagination.astro';
+import { env } from '../../environment';
+
+// page
+const { title, description } = env;
+
+export async function getStaticPaths({paginate, rss}) {
+  const allPosts = Astro.fetchContent('../../posts/*.md');
+  allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+  rss({
+    // The RSS Feed title, description, and custom metadata.
+    title: env.title,
+    description: env.description,
+    customData: `<language>en-us</language>`,
+    // The list of items for your RSS feed, sorted.
+    items: allPosts.map(item => ({
+      title: item.title,
+      description: item.description,
+      link: item.url,
+      pubDate: item.date,
+    })),
+  });
+
+  return paginate(allPosts,  { pageSize: 2 });
+}
+
+const { page } = Astro.props;
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+    <Head
+      title={title}
+      description={description}
+      image={page.data[0].image}
+      canonicalURL={Astro.request.canonicalURL.href}
+      prev={page.url.prev}
+      next={page.url.next}
+    />
+
+    <style lang="scss">
+      .title {
+        font-size: 3em;
+        letter-spacing: -0.04em;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .count {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <main class="wrapper">
+      <h2 class="title">All Posts</h2>
+      <small class="count">{page.start + 1}–{page.end + 1} of {page.total}</small>
+      {page.data.map((post) => <PostPreview post={post} />)}
+    </main>
+
+    <footer>
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </footer>
+  </body>
+</html>
