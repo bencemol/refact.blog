@@ -30,12 +30,6 @@ fields:
     maxSize: 64
   label: Cover
   description: Blog post cover image
-- name: canonicalUrl
-  type: text
-  config:
-    required: true
-  label: Url
-  description: Blog post url
 - name: tags
   type: tag_list
   default: []
