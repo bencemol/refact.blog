@@ -19,27 +19,9 @@ function formatDate(date) {
   text-align: center;
 }
 
-.date {
-  font-style: italic;
-}
-
-.description {
-  font-size: 1.25em;
-}
-
 .link {
   text-transform: uppercase;
-  font-size: 0.8em;
   margin-left: 1em;
-}
-
-h2 {
-  font-weight: 700;
-  font-size: 2.75em;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 time {
@@ -50,7 +32,6 @@ time {
 </style>
 
 <article class="post">
-
   <div class="data">
     <h2>{post.title}</h2>
     <time class="date" datetime={post.date}>{formatDate(post.date)}</time>

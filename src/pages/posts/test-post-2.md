@@ -4,7 +4,7 @@ tags:
 - test
 - frontend
 - ipsum
-title: veritatis pariatur delectus
+title: nesciunt totam sit blanditiis sit
 description: quo adipisci enim quam ut ab
 cover: /assets/img/azva3uz.jpg
 layout: "../../layouts/post.astro"

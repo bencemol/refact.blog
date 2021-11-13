@@ -9,18 +9,17 @@ const { prevUrl, nextUrl } = Astro.props;
 
 <style lang="scss">
 .nav {
+  flex: 1;
+  max-width: var(--max-width);
   display: flex;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .prev,
 .next {
   display: block;
   text-transform: uppercase;
-  font-size: 0.8em;
 
   &[href="#"] {
     display: none;
@@ -36,7 +35,7 @@ const { prevUrl, nextUrl } = Astro.props;
 }
 </style>
 
-<div class="wrapper">
+<div class="flex">
   <nav class="nav">
     <a class="prev" href={prevUrl || '#'} aria-label="Previous Page">Prev</a>
     <a class="next" href={nextUrl || '#'} aria-label="Next Page">Next</a>

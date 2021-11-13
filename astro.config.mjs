@@ -14,6 +14,6 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     site: "https://refact.blog"
   },
   devOptions: {
-    dist: "dist/"
+    dist: "dist/",
   }
 });

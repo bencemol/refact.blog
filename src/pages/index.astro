@@ -1,5 +1,7 @@
 ---
 import Head from '../components/Head.astro';
+import Nav from '../components/Nav.astro';
+import CenteredLayout from '../components/CenteredLayout.astro';
 import PostPreview from '../components/PostPreview.astro';
 import Pagination from '../components/Pagination.astro';
 import { env } from '../environment';
@@ -12,7 +14,7 @@ const { title, description } = env;
 // note: we want to show first 3 posts here, but we don’t want to paginate at /1, /2, /3, etc.
 const allPosts: CMS.Post[] = Astro.fetchContent('./posts/*.md');
 allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-const firstPage = allPosts.slice(0, 2);
+const firstPage = allPosts.slice(0, 3);
 ---
 
 <html>
@@ -23,13 +25,25 @@ const firstPage = allPosts.slice(0, 2);
       image={firstPage[0].cover}
       canonicalURL={Astro.request.canonicalURL.href}
     />
+    <style>
+      #grid-main {
+        padding: var(--doc-padding) var(--gutter);
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+    </style>
   </head>
 
   <body>
+    <Nav />
 
-    <main class="wrapper">
-      {firstPage.map((post) => <PostPreview post={post} />)}
-    </main>
+    <CenteredLayout>
+      <div id="grid-main">
+        {firstPage.map((post) => <PostPreview post={post} />)}
+      </div>
+    </CenteredLayout>
 
     <footer>
       <Pagination nextUrl="/posts/2" />
