@@ -1,7 +1,7 @@
 ---
 ---
 
-<style>
+<style lang="scss">
 :global(body) {
   width: 100%;
   display: grid;
@@ -11,12 +11,10 @@
 }
 
 .layout {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 
-    minmax(var(--gutter), 1fr) 
-    minmax(0, var(--max-width)) 
-    minmax(var(--gutter), 1fr);
+  overflow: initial;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
   overflow-x: hidden;
 }
 
@@ -25,27 +23,19 @@
   height: 100%;
 }
 
-@media (min-width: 50em) {
-  .layout {
-    overflow: initial;
-    grid-template-columns: 
-    20rem 
-    minmax(0, var(--max-width));
-    gap: 1em;
-  }
-}
-
-@media (min-width: 72em) {
-  .layout {
-    grid-template-columns: 
-    20rem 
-    minmax(0, var(--max-width)) 
-    18rem;
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0 auto;
-  }
-}
+// TODO add sidebars on widescreen
+// @media (min-width: 72em) {
+//   .layout {
+//     display: grid;
+//     grid-template-columns: 
+//       20rem 
+//       minmax(0, var(--max-width)) 
+//       20rem;
+//     padding-left: 0;
+//     padding-right: 0;
+//     margin: 0 auto;
+//   }
+// }
 </style>
 
 <main class="layout">
