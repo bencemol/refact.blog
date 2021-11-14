@@ -1,5 +1,6 @@
 ---
 import Head from '../components/Head.astro';
+import Nav from '../components/Nav.astro';
 import CenteredLayout from '../components/CenteredLayout.astro';
 import { env } from '../environment';
 
@@ -7,7 +8,8 @@ const { title } = env;
 const { content } = Astro.props;
 ---
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>{content.title} - {title}</title>
     <Head 
@@ -16,23 +18,25 @@ const { content } = Astro.props;
       image={content.image} 
       canonicalURL={Astro.request.canonicalURL.href} 
     />
-      <style>
-        #grid-main {
-          padding: var(--doc-padding) var(--gutter);
-          grid-column: 2;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
+    <style>
+      #grid-main {
+        padding: var(--doc-padding) var(--gutter);
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
     </style>
   </head>
+
+  <Nav />
 
   <body>
     <CenteredLayout>
       <div id="grid-main">
         <h1 class="title">{content.title}</h1>
-        <p class="description">{content.description}</p>
         <img class="img" src={content.cover} alt="">
+        <p class="description">{content.description}</p>
         <article class="article">
           <slot/>
         </article>
