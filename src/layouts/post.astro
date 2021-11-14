@@ -35,7 +35,7 @@ const { content } = Astro.props;
     <CenteredLayout>
       <div id="grid-main">
         <h1 class="title">{content.title}</h1>
-        <img class="img" src={content.cover} alt="">
+        <img class="img" src={content.cover} alt={content.title}>
         <p class="description">{content.description}</p>
         <article class="article">
           <slot/>

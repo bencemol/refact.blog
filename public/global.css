@@ -57,7 +57,7 @@ h2 {
 
 h1 {
   font-size: 3.25rem;
-  font-weight: 800;
+  font-weight: 790;
 }
 
 h2 {
@@ -273,6 +273,10 @@ img {
 .flex {
   display: flex;
   align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 button {

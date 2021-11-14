@@ -55,6 +55,8 @@
   --color-purple: var(--color-base-purple), 54%;
   --color-red: var(--color-base-red), 54%;
   --color-yellow: var(--color-base-yellow), 59%;
+
+  --border-radius: 0.5rem;
 }
 
 :root {

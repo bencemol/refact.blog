@@ -5,13 +5,11 @@ tags:
 - frontend
 - ipsum
 title: veritatis pariatur delectus
-description: quo adipisci enim quam ut ab
+description: molestiae ipsa aut voluptatibus pariatur dolor nihil ullam nobis libero sapiente ad optio sint suscipit repellat esse quibusdam voluptatem incidunt distinctio vitae autem nihil ut molestias quo
 cover: /assets/img/azva3uz.jpg
 layout: "../../layouts/post.astro"
 
 ---
-# This is a heading
-
 ## This will be a bit smaller
 
 ### Even smaller than that

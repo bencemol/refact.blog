@@ -10,8 +10,6 @@ cover: /assets/img/azva3uz.jpg
 layout: "../../layouts/post.astro"
 
 ---
-# This is a heading
-
 ## This will be a bit smaller
 
 ### Even smaller than that
