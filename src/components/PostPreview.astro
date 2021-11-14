@@ -13,7 +13,7 @@ function formatDate(date) {
 
 <style lang="scss">
 .post {
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .cover {
@@ -25,8 +25,13 @@ function formatDate(date) {
 }
 
 .link {
-  text-transform: uppercase;
-  margin-left: 1em;
+  color: unset;
+  text-decoration: none;
+  display: block;
+
+  &:hover .title {
+    color: var(--theme-text-accent);
+  }
 }
 
 time {
@@ -42,13 +47,14 @@ time {
 </style>
 
 <article class="post">
-  {post.cover ? <img class="cover" src={post.cover} alt={post.title}> : null}
-  <div class="data">
-    <h2>{post.title}</h2>
-    <time class="date" datetime={post.date}>{formatDate(post.date)}</time>
-    <p class="description">
-      {post.description}
-      <a class="link" href={post.url} aria-label={`Read ${post.title}`}>Read</a>
-    </p>
-  </div>
+  <a class="link" href={post.url} aria-label={`Read ${post.title}`}>
+    {post.cover ? <img class="cover" src={post.cover} alt={post.title}> : null}
+    <div class="data">
+      <h3 class="title">{post.title}</h3>
+      <time class="date" datetime={post.date}>{formatDate(post.date)}</time>
+      <p class="description">
+        {post.description}
+      </p>
+    </div>
+  </a>
 </article>
