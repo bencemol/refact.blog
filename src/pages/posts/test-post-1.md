@@ -6,7 +6,7 @@ tags:
 - ipsum
 title: veritatis pariatur delectus
 description: molestiae ipsa aut voluptatibus pariatur dolor nihil ullam nobis libero sapiente ad optio sint suscipit repellat esse quibusdam voluptatem incidunt distinctio vitae autem nihil ut molestias quo
-cover: /assets/img/azva3uz.jpg
+cover: /assets/img/azva3uz.webp
 layout: "../../layouts/post.astro"
 
 ---

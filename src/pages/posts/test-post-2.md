@@ -6,7 +6,7 @@ tags:
 - ipsum
 title: nesciunt totam sit blanditiis sit
 description: quo adipisci enim quam ut ab
-cover: /assets/img/azva3uz.jpg
+cover: /assets/img/azva3uz.webp
 layout: "../../layouts/post.astro"
 
 ---
