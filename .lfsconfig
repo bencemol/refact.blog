@@ -1,2 +1,2 @@
 [remote "origin"]
-        lfsurl = https://github.com/bencemol/refact.blog.git/info/lfs
+        lfsurl = git@github.com:bencemol/refact.blog.git/info/lfs
