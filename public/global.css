@@ -305,7 +305,6 @@ button {
 }
 
 button:hover {
-  background-color: var(--theme-accent);
   color: var(--theme-text-accent);
 }
 
