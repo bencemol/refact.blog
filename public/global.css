@@ -241,7 +241,6 @@ th {
 pre {
   background-color: var(--theme-code-bg);
   color: var(--theme-code-text);
-  border-radius: var(--border-radius);
 }
 
 blockquote code:not([class*='language']) {

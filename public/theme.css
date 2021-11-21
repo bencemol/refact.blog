@@ -104,6 +104,7 @@ body {
   :root {
     color-scheme: dark;
     --theme-accent-opacity: 0.4;
+    --theme-text-accent: hsla(var(--color-yellow), 1);
     --theme-divider: hsla(var(--color-gray-10), 1);
     --theme-text: hsla(var(--color-gray-90), 1);
     --theme-text-light: hsla(var(--color-gray-90), 1);
