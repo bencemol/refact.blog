@@ -20,9 +20,10 @@ const { content } = Astro.props;
     />
     <style lang="scss">
       #grid-main {
-        padding: var(--doc-padding) var(--gutter);
+        margin: var(--doc-padding) var(--gutter);
         display: flex;
         flex-direction: column;
+        align-items: center;
         height: 100%;
         max-width: var(--max-width);
       }
@@ -36,17 +37,12 @@ const { content } = Astro.props;
         background-color: var(--theme-text-lighter);
         object-fit: cover;
       }
-      .title {
-        &::first-letter {
-          text-transform: capitalize;
-        }
-      }
       .footer .nav {
         flex: 1;
         display: flex;
         max-width: var(--max-width);
         text-transform: uppercase;
-        justify-content: space-between;
+        justify-content: center;
       }
     </style>
   </head>

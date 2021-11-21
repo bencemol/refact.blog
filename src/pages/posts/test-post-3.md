@@ -4,7 +4,7 @@ tags:
 - test
 - frontend
 - ipsum
-title: laborum aut in quam
+title: Laborum aut in quam
 description: quo adipisci enim quam ut ab
 cover: /assets/img/azva3uz.webp
 layout: "../../layouts/post.astro"

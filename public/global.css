@@ -204,11 +204,12 @@ table,
 pre {
   position: relative;
   --padding-block: 1rem;
-  --padding-inline: 2rem;
+  --padding-inline: var(--gutter);
   padding: var(--padding-block) var(--padding-inline);
   padding-right: calc(var(--padding-inline) * 2);
   font-family: var(--font-mono);
-
+  margin-left: calc(var(--padding-inline) * -1);
+  margin-right: calc(var(--padding-inline) * -1);
   line-height: 1.5;
   font-size: 0.85em;
   overflow-y: hidden;
@@ -240,7 +241,6 @@ th {
 pre {
   background-color: var(--theme-code-bg);
   color: var(--theme-code-text);
-  border-radius: var(--border-radius);
 }
 
 blockquote code:not([class*='language']) {
@@ -252,6 +252,7 @@ blockquote code:not([class*='language']) {
     --padding-inline: 1.25rem;
     margin-left: 0;
     margin-right: 0;
+    border-radius: var(--border-radius);
   }
 }
 
