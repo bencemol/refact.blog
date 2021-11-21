@@ -30,6 +30,13 @@ function formatDate(date) {
   text-decoration: none;
   display: block;
 
+  .title {
+    transition: color var(--enter-fast);
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
   &:hover .title {
     color: var(--theme-text-accent);
   }
@@ -51,7 +58,7 @@ time {
   <a class="link" href={post.url} aria-label={`Read ${post.title}`}>
     {post.cover ? <img class="cover" src={post.cover} alt={post.title}> : null}
     <div class="data">
-      <h3 class="title">{post.title}</h3>
+      <h2 class="title">{post.title}</h2>
       <time class="date" datetime={post.date}>{formatDate(post.date)}</time>
       <p class="description">
         {post.description}
