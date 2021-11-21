@@ -1,0 +1,66 @@
+---
+export interface Props {
+  text: string;
+  class: string;
+}
+
+const { text, class: className } = Astro.props;
+---
+
+<style lang="scss">
+.tooltip-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+
+  &:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.tooltip {
+  --default-spacing: 1ch;
+  --position: calc(100% + var(--spacing, var(--default-spacing)));
+  --font-size: 0.8rem;
+  font-size: var(--font-size);
+  line-height: var(--font-size);
+  width: max-content;
+  padding: 0.4rem 0.8rem;
+  color: hsla(var(--color-white), 1);
+  background-color: hsla(var(--color-black), 1);
+  position: absolute;
+  top: var(--position);
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity var(--enter-fast), 
+    visibility var(--enter-fast);
+  transform: translateX(-50%);
+  pointer-events: none;
+
+}
+.top .tooltip {
+  bottom: var(--position);
+  top: unset;
+}
+.right .tooltip,
+.left .tooltip {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right .tooltip {
+  left: var(--position);
+}
+.left .tooltip {
+  right: var(--position);
+  left: unset;
+}
+</style>
+
+<div class={'tooltip-container ' + className}>
+  <slot />
+  <span class="tooltip round">
+    { text }
+  </span>
+</div>

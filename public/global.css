@@ -56,24 +56,24 @@ h2 {
 }
 
 h1 {
-  font-size: 3.25rem;
+  font-size: 2.5rem;
   font-weight: 790;
 }
 
 h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
   font-size: 1.75rem;
 }
 
-h4 {
+h3 {
   font-size: 1.3rem;
 }
 
-h5 {
+h4 {
   font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.9rem;
 }
 
 p,
@@ -207,8 +207,6 @@ pre {
   --padding-inline: 2rem;
   padding: var(--padding-block) var(--padding-inline);
   padding-right: calc(var(--padding-inline) * 2);
-  margin-left: calc(var(--padding-inline) * -1);
-  margin-right: calc(var(--padding-inline) * -1);
   font-family: var(--font-mono);
 
   line-height: 1.5;
@@ -242,6 +240,7 @@ th {
 pre {
   background-color: var(--theme-code-bg);
   color: var(--theme-code-text);
+  border-radius: var(--border-radius);
 }
 
 blockquote code:not([class*='language']) {
@@ -251,7 +250,6 @@ blockquote code:not([class*='language']) {
 @media (min-width: 37.75em) {
   pre {
     --padding-inline: 1.25rem;
-    border-radius: 8px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -279,6 +277,14 @@ img {
   flex-direction: column;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 button {
   display: flex;
   align-items: center;
@@ -298,4 +304,8 @@ button {
 
 :target {
   scroll-margin: calc(var(--theme-sidebar-offset, 5rem) + 2rem) 0 2rem;
+}
+
+.round {
+  border-radius: var(--border-radius);
 }
