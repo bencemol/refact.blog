@@ -27,7 +27,7 @@
   --color-base-orange: 22, 100%;
   --color-base-purple: 269, 79%;
   --color-base-red: 351, 100%;
-  --color-base-yellow: 39, 100%;
+  --color-base-yellow: 31, 100%;
 
   /*
      * Color palettes are made using --color-base 
@@ -52,11 +52,12 @@
   --color-white: var(--color-base-white), 100%;
   --color-blue: var(--color-base-blue), 61%;
   --color-blue-dark: var(--color-base-blue-dark), 39%;
-  --color-green: var(--color-base-green), 28%;
+  --color-green: var(--color-base-green), 23%;
   --color-orange: var(--color-base-orange), 50%;
   --color-purple: var(--color-base-purple), 54%;
   --color-red: var(--color-base-red), 54%;
   --color-yellow: var(--color-base-yellow), 44%;
+  --color-yellow-25: var(--color-base-yellow), 25%; 
 
   --border-radius: 0.5rem;
 
@@ -72,7 +73,7 @@
 :root {
   color-scheme: light;
   --theme-accent: hsla(var(--color-yellow), 1);
-  --theme-text-accent: hsla(var(--color-yellow), 1);
+  --theme-text-accent: hsla(var(--color-green), 1);
   --theme-accent-opacity: 0.1;
   --theme-divider: hsla(var(--color-gray-95), 1);
   --theme-text: hsla(var(--color-gray-10), 1);
@@ -85,7 +86,7 @@
   --theme-bg-accent: hsla(var(--color-orange), var(--theme-accent-opacity));
   --theme-code-inline-bg: hsla(var(--color-gray-95), 1);
   --theme-code-inline-text: var(--theme-text);
-  --theme-code-bg: hsla(217, 19%, 27%, 1);
+  --theme-code-bg: hsla(var(--color-green), 1);
   --theme-code-text: hsla(var(--color-gray-95), 1);
   --theme-navbar-bg: hsla(var(--color-base-white), 100%, 1);
   --theme-navbar-height: 6rem;
@@ -103,8 +104,6 @@ body {
   :root {
     color-scheme: dark;
     --theme-accent-opacity: 0.4;
-    --theme-accent: hsla(var(--color-yellow), 1);
-    --theme-text-accent: hsla(var(--color-yellow), 1);
     --theme-divider: hsla(var(--color-gray-10), 1);
     --theme-text: hsla(var(--color-gray-90), 1);
     --theme-text-light: hsla(var(--color-gray-90), 1);
