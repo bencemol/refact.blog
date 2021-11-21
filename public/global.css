@@ -298,9 +298,15 @@ button {
   font-size: 1rem;
   align-items: center;
   gap: 0.25em;
-  border-radius: 99em;
+  border-radius: var(--border-radius);
   color: var(--theme-text);
+  border: 2px solid currentColor;
   background-color: var(--theme-bg);
+}
+
+button:hover {
+  background-color: var(--theme-accent);
+  color: var(--theme-text-accent);
 }
 
 :target {
@@ -309,4 +315,9 @@ button {
 
 .round {
   border-radius: var(--border-radius);
+}
+
+astro-root > * {
+  margin-top: var(--doc-padding);
+  margin-bottom: var(--doc-padding);
 }

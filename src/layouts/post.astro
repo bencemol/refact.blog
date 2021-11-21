@@ -23,7 +23,6 @@ const { content } = Astro.props;
         margin: var(--doc-padding) var(--gutter);
         display: flex;
         flex-direction: column;
-        align-items: center;
         height: 100%;
         max-width: var(--max-width);
       }
@@ -54,8 +53,8 @@ const { content } = Astro.props;
     <CenteredLayout>
       <div id="grid-main">
         <section class="heading">
-          <h1 class="title">{content.title}</h1>
           <img class="img cover round" src={content.cover} alt={content.title}>
+          <h1 class="title">{content.title}</h1>
           <p class="description">{content.description}</p>
         </section>
         <article class="article">

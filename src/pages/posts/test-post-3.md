@@ -6,7 +6,7 @@ tags:
 - ipsum
 title: Laborum aut in quam
 description: quo adipisci enim quam ut ab
-cover: /assets/img/azva3uz.webp
+cover: /assets/img/ShegIdB.webp
 layout: "../../layouts/post.astro"
 
 ---
