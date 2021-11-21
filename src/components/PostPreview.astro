@@ -1,42 +1,64 @@
 ---
 import { CMS } from '../models/cms';
+import { xmur3, mulberry32 } from '../util/prng';
 
 export interface Props {
   post: CMS.Post;
 }
 const { post } = Astro.props;
+const seed = xmur3(post.title);
+const rand = mulberry32(seed());
+const color = Math.trunc(5 * rand());
 
 function formatDate(date) {
   return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
 }
 ---
 
-<style lang="scss">
+<style lang="css">
 .post {
-  padding: 2rem 0;
+  overflow: hidden;
+  background-color: var(--theme-accent);
 }
 
 .cover {
-  border-radius: var(--border-radius);
   width: 100%;
   max-height: 400px;
   aspect-ratio: 16 / 9;
   background-color: var(--theme-text-lighter);
   object-fit: cover;
+  margin-bottom: var(--gutter);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: transform var(--enter-fast);
+  transform: scale(1.06);
+  transform-origin: bottom center;
+  will-change: transform;
+}
+
+.data {
+  padding: var(--gutter);
 }
 
 .link {
   color: unset;
   text-decoration: none;
   display: block;
+}
 
-  .title {
-    transition: color var(--enter-fast);
-  }
+.link:hover .title {
+  text-decoration-color: currentColor;
+}
 
-  &:hover .title {
-    color: var(--theme-accent);
-  }
+.link:hover .cover {
+  transform: scale(1);
+}
+
+.title {
+  transition: color var(--enter-fast);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--enter-fast);
 }
 
 time {
@@ -49,10 +71,18 @@ time {
 .description {
   max-width: var(--max-width);
 }
+
+.border {
+  height: var(--gutter);
+  width: 100%;
+  background-color: var(--theme-accent-secondary);
+}
 </style>
 
-<article class="post">
+<!-- <article class="post round" style={`background-color: var(--theme-palette-${color})`}> -->
+<article class="post round">
   <a class="link" href={post.url} aria-label={`Read ${post.title}`}>
+    <div class="border"></div>
     {post.cover ? <img class="cover" src={post.cover} alt={post.title}> : null}
     <div class="data">
       <h2 class="title">{post.title}</h2>

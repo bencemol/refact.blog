@@ -1,5 +1,7 @@
 ---
 import Head from '../../components/Head.astro';
+import Nav from '../../components/Nav.astro';
+import CenteredLayout from '../../components/CenteredLayout.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 import { CMS } from '../../models/cms';
@@ -31,42 +33,34 @@ const { title, description } = env;
 const { page } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html>
   <head>
-    <title>{title}</title>
     <Head
       title={title}
       description={description}
-      image={page.data[0].image}
+      image={page.data[0].cover}
       canonicalURL={Astro.request.canonicalURL.href}
-      prev={page.url.prev}
-      next={page.url.next}
     />
-
-    <style lang="scss">
-      .title {
-        font-size: 3em;
-        letter-spacing: -0.04em;
-        margin-top: 2rem;
-        margin-bottom: 0;
-        text-align: center;
-      }
-
-      .count {
-        font-size: 1em;
-        display: block;
-        text-align: center;
+    <style>
+      #grid-main {
+        padding: var(--doc-padding) var(--gutter);
+        display: flex;
+        flex-direction: column;
+        gap: var(--doc-padding);
+        height: 100%;
       }
     </style>
   </head>
 
   <body>
+    <Nav />
 
-    <main class="wrapper">
-      <h2 class="title">All Posts</h2>
-      <small class="count">{page.start + 1}–{page.end + 1} of {page.total}</small>
-      {page.data.map((post) => <PostPreview post={post} />)}
-    </main>
+    <CenteredLayout>
+      <div id="grid-main">
+        {page.data.map((post) => <PostPreview post={post} />)}
+      </div>
+    </CenteredLayout>
 
     <footer>
       <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />

@@ -4,7 +4,7 @@ tags:
 - test
 - frontend
 - ipsum
-title: Sint sit aut vero
+title: Sint sit aut vero enim
 description: quo adipisci enim quam ut ab
 cover: /assets/img/I9ElQ8v.webp
 layout: "../../layouts/post.astro"
