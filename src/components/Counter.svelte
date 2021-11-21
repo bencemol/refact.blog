@@ -10,9 +10,15 @@
   }
 </script>
 
-<div class="counter">
+<style>
+.counter {
+  gap: 1ch;
+}
+</style>
+
+<div class="counter flex">
   <button on:click={subtract}>-</button>
-  <pre>{ count }</pre>
+  <div>{ count }</div>
   <button on:click={add}>+</button>
 </div>
 <div class="children">

@@ -6,7 +6,7 @@ tags:
 - ipsum
 title: Sint sit aut vero
 description: quo adipisci enim quam ut ab
-cover: /assets/img/azva3uz.webp
+cover: /assets/img/I9ElQ8v.webp
 layout: "../../layouts/post.astro"
 
 ---

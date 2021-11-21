@@ -6,9 +6,10 @@ tags:
 - ipsum
 title: Nesciunt totam sit blanditiis sit
 description: quo adipisci enim quam ut ab
-cover: /assets/img/azva3uz.webp
+cover: /assets/img/JKLibtH.webp
 layout: "../../layouts/post.astro"
-
+setup: |
+  import Counter from "../../components/Counter.svelte";
 ---
 ## This will be a bit smaller
 
@@ -26,3 +27,5 @@ console.log(`Hello ${world}!`);
 nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
 repudiandae totam in est sint `facere` fuga
 earum doloribus ea doloremque quis
+
+<Counter client:visible/>
