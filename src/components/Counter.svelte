@@ -14,9 +14,14 @@
 .counter {
   gap: 1ch;
 }
+button,
+div {
+  width: 4ch;
+  text-align: center;
+}
 </style>
 
-<div class="counter flex">
+<div class="counter">
   <button on:click={subtract}>-</button>
   <div>{ count }</div>
   <button on:click={add}>+</button>
