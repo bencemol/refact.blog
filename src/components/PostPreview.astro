@@ -1,24 +1,18 @@
 ---
 import { CMS } from '../models/cms';
-import { xmur3, mulberry32 } from '../util/prng';
+import { formatDate } from '../util/date-format';
 
 export interface Props {
   post: CMS.Post;
 }
 const { post } = Astro.props;
-const seed = xmur3(post.title);
-const rand = mulberry32(seed());
-const color = Math.trunc(5 * rand());
 
-function formatDate(date) {
-  return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
-}
+
 ---
 
-<style lang="css">
+<style lang="scss">
 .post {
   overflow: hidden;
-  background-color: var(--theme-accent);
 }
 
 .cover {
@@ -27,63 +21,40 @@ function formatDate(date) {
   aspect-ratio: 16 / 9;
   background-color: var(--theme-text-lighter);
   object-fit: cover;
-  margin-bottom: var(--gutter);
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  transition: transform var(--enter-fast);
-  transform: scale(1.06);
-  transform-origin: bottom center;
-  will-change: transform;
-}
-
-.data {
-  padding: var(--gutter);
 }
 
 .link {
   color: unset;
   text-decoration: none;
   display: block;
-}
 
-.link:hover .title {
-  text-decoration-color: currentColor;
-}
-
-.link:hover .cover {
-  transform: scale(1);
+  &:hover,
+  &:focus {
+    .title {
+      text-decoration-color: var(--theme-text-accent);
+      color: var(--theme-text-accent)
+    }
+  }
 }
 
 .title {
+  margin: var(--gutter) 0;
   transition: color var(--enter-fast);
   text-decoration: underline;
   text-decoration-color: transparent;
-  transition: text-decoration-color var(--enter-fast);
-}
-
-time {
-  display: block;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5em;
-  font-size: 0.8rem;
+  transition: text-decoration-color var(--enter-fast), color var(--enter-fast);;
 }
 
 .description {
   max-width: var(--max-width);
 }
-
-.border {
-  height: var(--gutter);
-  width: 100%;
-  background-color: var(--theme-accent-secondary);
-}
 </style>
 
-<!-- <article class="post round" style={`background-color: var(--theme-palette-${color})`}> -->
-<article class="post round">
+<article class="post">
   <a class="link" href={post.url} aria-label={`Read ${post.title}`}>
-    <div class="border"></div>
-    {post.cover ? <img class="cover" src={post.cover} alt={post.title}> : null}
+    { post.cover 
+      ? <img class="cover round" src={post.cover} alt={post.title}>
+      : null }
     <div class="data">
       <h2 class="title">{post.title}</h2>
       <time class="date" datetime={post.date}>{formatDate(post.date)}</time>

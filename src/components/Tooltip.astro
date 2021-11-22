@@ -21,14 +21,12 @@ const { text, class: className } = Astro.props;
 .tooltip {
   --default-spacing: 1ch;
   --position: calc(100% + var(--spacing, var(--default-spacing)));
-  --font-size: 0.8rem;
   --border-radius: 3px;
-  font-size: var(--font-size);
-  line-height: var(--font-size);
+  font-size: 0.85rem;
   width: max-content;
-  padding: 0.4rem 0.8rem;
+  padding: 0.2rem 0.4rem;
   color: hsla(var(--color-white), 1);
-  background-color: hsla(var(--color-black), 1);
+  background-color: hsla(var(--color-green), 1);
   position: absolute;
   top: var(--position);
   left: 50%;

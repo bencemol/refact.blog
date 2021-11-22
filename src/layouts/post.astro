@@ -3,6 +3,7 @@ import Head from '../components/Head.astro';
 import Nav from '../components/Nav.astro';
 import CenteredLayout from '../components/CenteredLayout.astro';
 import { env } from '../environment';
+import { formatDate } from '../util/date-format';
 
 const { title } = env;
 const { content } = Astro.props;
@@ -36,6 +37,9 @@ const { content } = Astro.props;
         background-color: var(--theme-text-lighter);
         object-fit: cover;
       }
+      .title {
+        margin: var(--gutter) 0;
+      }
       .footer .nav {
         flex: 1;
         display: flex;
@@ -54,7 +58,8 @@ const { content } = Astro.props;
       <div id="grid-main">
         <section class="heading">
           <img class="img cover round" src={content.cover} alt={content.title}>
-          <h1 class="title">{content.title}</h1>
+          <h2 class="title">{content.title}</h2>
+          <time class="date" datetime={content.date}>{formatDate(content.date)}</time>
           <p class="description">{content.description}</p>
         </section>
         <article class="article">
