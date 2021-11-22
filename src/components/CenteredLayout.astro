@@ -13,6 +13,9 @@
 .layout {
   overflow: initial;
   padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(0, var(--max-width));
+  justify-content: center;
 }
 
 :global(.layout > *) {
