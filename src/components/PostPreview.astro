@@ -54,7 +54,7 @@ const { post } = Astro.props;
 <article class="post">
   <a class="link" href={post.url} aria-label={`Read ${post.title}`}>
     { post.cover 
-      ? <img class="cover round" src={post.cover} alt={post.title}>
+      ? <img class="cover round" src={post.cover} alt={post.title} loading="lazy">
       : null }
     <div class="data">
       <h2 class="title">{post.title}</h2>

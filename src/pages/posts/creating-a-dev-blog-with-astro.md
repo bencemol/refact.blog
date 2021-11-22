@@ -14,7 +14,7 @@ cover: "/assets/img/astro.webp"
 ---
 ### Another framework? *🙄*
 
-Not exactly, [astro.build](https://astro.build/) works more like static site generators ([11ty](https://www.11ty.dev/), [HUGO](https://gohugo.io/)).
+Not exactly, [Astro](https://astro.build/) works more like static site generators ([11ty](https://www.11ty.dev/), [HUGO](https://gohugo.io/)).
 The build produces no javascript by default, rendering is done at build time, the idea being to make it more difficult for developers to create sites with unnecessarily large bundles and jank user experience. 
 
 ### What about interactivity? 

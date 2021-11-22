@@ -6,6 +6,7 @@ import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 import { CMS } from '../../models/cms';
 import { env } from '../../environment';
+import { pageSize } from '../../pages/index.astro';
 
 export async function getStaticPaths({paginate, rss}) {
   const allPosts: CMS.Post[] = Astro.fetchContent('./*.md');
@@ -26,7 +27,7 @@ export async function getStaticPaths({paginate, rss}) {
     dest: '/feed/posts.xml'
   });
 
-  return paginate(allPosts,  { pageSize: 4 });
+  return paginate(allPosts,  { pageSize });
 }
 
 const { title, description } = env;
