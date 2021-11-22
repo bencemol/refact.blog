@@ -10,7 +10,7 @@ cover: /assets/img/azva3uz.webp
 layout: "../../layouts/post.astro"
 setup: |
   import Tooltip from "../../components/Tooltip.astro";
-
+  import { Markdown } from 'astro/components';
 ---
 ## This will be a bit smaller
 
@@ -30,22 +30,25 @@ repudiandae totam in est sint `facere` fuga
 earum doloribus ea doloremque quis
 
 <Tooltip text="tooltip text" class="bottom">
-nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
-repudiandae totam in est sint `facere` fuga
-earum doloribus ea doloremque quis
-nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
-repudiandae totam in est sint `facere` fuga
-earum doloribus ea doloremque quis
-nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
-repudiandae totam in est sint `facere` fuga
-earum doloribus ea doloremque quis
-nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
-repudiandae totam in est sint `facere` fuga
-earum doloribus ea doloremque quis
-nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
-repudiandae totam in est sint `facere` fuga
-earum doloribus ea doloremque quis
-nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
-repudiandae totam in est sint `facere` fuga
-earum doloribus ea doloremque quis
+  <Markdown> 
+  nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
+  repudiandae totam in est sint `facere` fuga
+  earum doloribus ea doloremque quis
+  </Markdown>
 </Tooltip>
+
+> nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
+repudiandae totam in est sint `facere` fuga
+earum doloribus ea doloremque quis
+nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
+repudiandae totam in est sint `facere` fuga
+earum doloribus ea doloremque quis
+nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
+repudiandae totam in est sint `facere` fuga
+earum doloribus ea doloremque quis
+nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
+repudiandae totam in est sint `facere` fuga
+earum doloribus ea doloremque quis
+nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
+repudiandae totam in est sint `facere` fuga
+earum doloribus ea doloremque quis

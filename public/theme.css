@@ -72,35 +72,28 @@
 
 :root {
   color-scheme: light;
-  --theme-accent: hsla(var(--color-base-green), 75%, 1);
-  --theme-accent-secondary: hsla(var(--color-base-yellow), 75%, 1);
-  --theme-text-accent: hsla(var(--color-green), 1);
-  --theme-accent-opacity: 0.1;
+  --theme-accent: hsla(var(--color-base-green), 94%, 1);
+  --theme-text-accent: hsla(var(--color-base-green), 30%, 1);
+  --theme-accent-opacity: 0.15;
   --theme-divider: hsla(var(--color-gray-95), 1);
   --theme-text: hsla(var(--color-gray-10), 1);
   --theme-text-light: hsla(var(--color-gray-20), 1);
   /* @@@: not used anywhere */
   --theme-text-lighter: hsla(var(--color-gray-80), 1);
-  --theme-bg: hsla(var(--color-base-white), 100%, 1);
+  --theme-bg: hsla(var(--color-white), 1);
   --theme-bg-hover: hsla(var(--color-gray-95), 1);
-  --theme-bg-offset: hsla(var(--color-gray-90), 1);
+  --theme-bg-offset: hsla(var(--color-base-green), 94%, 1);
   --theme-bg-accent: hsla(var(--color-orange), var(--theme-accent-opacity));
-  --theme-code-inline-bg: hsla(var(--color-gray-95), 1);
-  --theme-code-inline-text: var(--theme-text);
+  --theme-code-inline-bg: hsla(var(--color-green), 1);
+  --theme-code-inline-text: hsla(var(--color-gray-95), 1);
   --theme-code-bg: hsla(var(--color-green), 1);
   --theme-code-text: hsla(var(--color-gray-95), 1);
   --theme-navbar-bg: hsla(var(--color-base-white), 100%, 1);
   --theme-navbar-height: 6rem;
   --theme-footer-height: 6rem;
-  --theme-selection-color: hsla(var(--color-green), 1);
-  --theme-selection-bg: hsla(var(--color-green), var(--theme-accent-opacity));
-
-  --theme-palette-0: hsla(var(--color-green), 1);
-  --theme-palette-1: #2e2c2f;
-  --theme-palette-2: #2a3c2d;
-  --theme-palette-3: #4F172C;
-  --theme-palette-4: #4B431B;
-  
+  --theme-selection-color: hsla(var(--color-gray-5), 1);
+  --theme-selection-bg: hsla(var(--color-purple), var(--theme-accent-opacity));
+  --theme-code-selection-bg: hsla(var(--color-base-purple), 83%, var(--theme-accent-opacity));
 }
 
 body {
@@ -111,9 +104,8 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --theme-accent-opacity: 0.4;
+    --theme-accent-opacity: 0.25;
     --theme-accent: hsla(var(--color-green), 1);
-    --theme-accent-secondary: hsla(var(--color-yellow), 1);
     --theme-text-accent: hsla(var(--color-yellow), 1);
     --theme-divider: hsla(var(--color-gray-10), 1);
     --theme-text: hsla(var(--color-gray-90), 1);
@@ -123,7 +115,7 @@ body {
     --theme-text-lighter: hsla(var(--color-gray-40), 1);
     --theme-bg: hsla(var(--color-gray-5), 1);
     --theme-bg-hover: hsla(var(--color-gray-40), 1);
-    --theme-bg-offset: hsla(var(--color-gray-5), 1);
+    --theme-bg-offset: hsla(var(--color-green), 1);
     --theme-code-inline-bg: hsla(var(--color-green), 1);
     --theme-code-inline-text: hsla(var(--color-base-white), 100%, 1);
     --theme-code-bg: hsla(var(--color-green), 1);
@@ -145,7 +137,11 @@ body {
   }
 }
 
-/* ::selection {
-  color: var(--theme-selection-color);
+::selection {
   background-color: var(--theme-selection-bg);
-} */
+}
+
+code *::selection,
+pre *::selection {
+  background-color: var(--theme-code-selection-bg);
+}

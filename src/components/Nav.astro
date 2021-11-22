@@ -23,16 +23,110 @@ import { env } from '../environment';
   }
 }
 
+.link {
+  text-decoration: none;
+
+  &:hover {
+    .icon {
+      animation: rotate 3s infinite;
+      animation-delay: var(--duration);
+      animation-timing-function: linear;
+    }
+    path{
+      animation-name: draw-reverse;
+      animation-delay: var(--delay);
+      animation-timing-function: var(--ease-in);
+    }
+    polyline {
+      animation-name: draw-head-reverse;
+      animation-delay: 0s;
+      animation-timing-function: linear;
+    }
+  }
+}
+
 .title {
   margin: 0;
+}
+
+.wave {
+  animation: wave-animation 2.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+  will-change: transform;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate( 0.0deg) }
+  10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+  60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.icon {
+  --duration: .6s;
+  --delay: calc(var(--duration) / 4);
+  path {
+    --offset: -16.14203643798828;
+    stroke-dasharray: 16.14203643798828;
+    stroke-dashoffset: var(--offset);
+    animation: draw var(--duration) var(--ease-out) both;
+  }
+  polyline {
+    --offset: -8.485280990600586;
+    stroke-dasharray: 8.485280990600586;
+    stroke-dashoffset: var(--offset);
+    animation: draw-head var(--duration) var(--delay) var(--ease-out) both;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes draw-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: var(--offset);
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes draw-head-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: var(--offset);
+  }
+}
+@keyframes draw-head {
+  from {
+    stroke-dashoffset: var(--offset);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 </style>
 
 <header class="header">
     <div class="header-container">
-      <a class="flex" href="/">
+      <a class="link flex" href="/">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-git-compare" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
           <circle cx="6" cy="6" r="2" />
           <circle cx="18" cy="18" r="2" />
           <path d="M11 6h5a2 2 0 0 1 2 2v8" />
@@ -40,8 +134,8 @@ import { env } from '../environment';
           <path d="M13 18h-5a2 2 0 0 1 -2 -2v-8" />
           <polyline points="10 15 13 18 10 21" />
         </svg>
-        <h4 class="title">{env.title}</h4>
+        <h3 class="title">{env.title}</h3>
       </a>
-      <span>hello there 👋</span>
+      <span>Hello there <span class="wave">👋</span></span>
     </div>
 </header>
