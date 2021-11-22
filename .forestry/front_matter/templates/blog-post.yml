@@ -50,5 +50,11 @@ fields:
       path: 
   label: Layout
   description: Astro layout component
+- name: setup
+  type: text
+  config:
+    required: false
+  label: Setup
+  description: astro setup (component imports etc.)
 pages:
-- src/posts/test-post-1.md
+- src/pages/posts/creating-a-development-blog-with-astro.md
