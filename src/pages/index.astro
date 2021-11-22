@@ -7,13 +7,18 @@ import Pagination from '../components/Pagination.astro';
 import { env } from '../environment';
 import { CMS } from '../models/cms';
 
+export function sortByDate(a: CMS.Post, b: CMS.Post): number {
+  return new Date(b.date).valueOf() - new Date(a.date).valueOf();
+}
+
 // page
 export const pageSize = 20;
 const { title, description } = env;
 
+
 // collection
 const allPosts: CMS.Post[] = Astro.fetchContent('./posts/*.md');
-allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+allPosts.sort(sortByDate);
 const firstPage = allPosts.slice(0, pageSize);
 ---
 

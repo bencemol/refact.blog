@@ -6,11 +6,11 @@ import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 import { CMS } from '../../models/cms';
 import { env } from '../../environment';
-import { pageSize } from '../../pages/index.astro';
+import { pageSize, sortByDate } from '../../pages/index.astro';
 
 export async function getStaticPaths({paginate, rss}) {
   const allPosts: CMS.Post[] = Astro.fetchContent('./*.md');
-  allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+  allPosts.sort(sortByDate);
 
   rss({
     // The RSS Feed title, description, and custom metadata.
