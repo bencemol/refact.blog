@@ -23,14 +23,15 @@ import { env } from '../environment';
   }
 }
 
-.link {
+#home {
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &.idle {
     .icon {
-      animation: rotate 3s infinite;
+      --duration: .4s;
+      animation: rotate .8s infinite;
       animation-delay: var(--duration);
-      animation-timing-function: linear;
     }
     path{
       animation-name: draw-reverse;
@@ -77,8 +78,8 @@ import { env } from '../environment';
     animation: draw var(--duration) var(--ease-out) both;
   }
   polyline {
-    --offset: -8.485280990600586;
-    stroke-dasharray: 8.485280990600586;
+    --offset: -4.242640495300293;
+    stroke-dasharray: 4.242640495300293;
     stroke-dashoffset: var(--offset);
     animation: draw-head var(--duration) var(--delay) var(--ease-out) both;
   }
@@ -89,7 +90,7 @@ import { env } from '../environment';
     transform: rotateZ(0deg);
   }
   to {
-    transform: rotateZ(360deg);
+    transform: rotateZ(180deg);
   }
 }
 @keyframes draw-reverse {
@@ -125,17 +126,28 @@ import { env } from '../environment';
 
 <header class="header">
     <div class="header-container">
-      <a class="link flex" href="/">
+      <a class="link flex" id="home" href="/">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-git-compare" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="6" cy="6" r="2" />
           <circle cx="18" cy="18" r="2" />
           <path d="M11 6h5a2 2 0 0 1 2 2v8" />
-          <polyline points="14 9 11 6 14 3" />
+          <polyline points="14 9 11 6" />
+          <polyline points="14 3 11 6" />
           <path d="M13 18h-5a2 2 0 0 1 -2 -2v-8" />
-          <polyline points="10 15 13 18 10 21" />
+          <polyline points="10 15 13 18" />
+          <polyline points="10 21 13 18" />
         </svg>
         <h3 class="title">{env.title}</h3>
       </a>
       <span>Hello there <span class="wave">👋</span></span>
     </div>
+    <script>
+      const idleClass = 'idle';
+      const homeLink = document.querySelector('#home');
+      setInterval(() => {
+          homeLink.classList.add(idleClass);
+          setTimeout(() => homeLink.classList.remove(idleClass), 2000);
+        }
+        , 30 * 1000);
+    </script>
 </header>
