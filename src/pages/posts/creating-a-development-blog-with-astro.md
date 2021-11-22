@@ -10,7 +10,6 @@ title: "Creating a development blog with Astro \U0001F680"
 description: What better way to explore a new architecture than a personal playground.
   Progressive enchacement with the islands architecture.
 cover: "/assets/img/astro.webp"
-setup: ''
 
 ---
 ### Another framework? 🙄
