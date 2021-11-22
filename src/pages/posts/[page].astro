@@ -42,13 +42,13 @@ const { page } = Astro.props;
       image={page.data[0].cover}
       canonicalURL={Astro.request.canonicalURL.href}
     />
-    <style>
+    <style lang="scss">
       #grid-main {
-        padding: var(--doc-padding) var(--gutter);
-        display: flex;
-        flex-direction: column;
-        gap: var(--doc-padding);
         height: 100%;
+        padding: var(--doc-padding) 0;
+      }
+      :global(.post:not(:first-child)) {
+        margin-top: var(--doc-padding);
       }
     </style>
   </head>

@@ -28,11 +28,11 @@ const firstPage = allPosts.slice(0, 3);
     />
     <style>
       #grid-main {
-        padding: var(--doc-padding) var(--gutter);
-        display: flex;
-        flex-direction: column;
-        gap: var(--doc-padding);
         height: 100%;
+        padding: var(--doc-padding) 0;
+      }
+      :global(.post:not(:first-child)) {
+        margin-top: var(--doc-padding);
       }
     </style>
   </head>
