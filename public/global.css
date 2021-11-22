@@ -349,3 +349,7 @@ time {
   margin: 0.25rem 0;
   font-size: 0.8rem;
 }
+
+footer {
+  padding: 0 var(--gutter);
+}
