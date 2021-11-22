@@ -56,5 +56,3 @@ fields:
     required: false
   label: Setup
   description: astro setup (component imports etc.)
-pages:
-- src/pages/posts/creating-a-development-blog-with-astro.md
