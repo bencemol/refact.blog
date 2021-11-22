@@ -52,3 +52,20 @@ earum doloribus ea doloremque quis
 nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis
 repudiandae totam in est sint `facere` fuga
 earum doloribus ea doloremque quis
+
+| Feature                      | Astro                                      | JSX                                                |
+| ---------------------------- | ------------------------------------------ | -------------------------------------------------- |
+| File extension               | `.astro`                                   | `.jsx` or `.tsx`                                   |
+| User-Defined Components      | `<Capitalized>`                            | `<Capitalized>`                                    |
+| Expression Syntax            | `{}`                                       | `{}`                                               |
+| Spread Attributes            | `{...props}`                               | `{...props}`                                       |
+| Boolean Attributes           | `autocomplete` === `autocomplete={true}`   | `autocomplete` === `autocomplete={true}`           |
+| Inline Functions             | `{items.map(item => <li>{item}</li>)}`     | `{items.map(item => <li>{item}</li>)}`             |
+| IDE Support                  | WIP - [VS Code][code-ext]                  | Phenomenal                                         |
+| Requires JS import           | No                                         | Yes, `jsxPragma` (`React` or `h`) must be in scope |
+| Fragments                    | Automatic top-level, `<>` inside functions | Wrap with `<Fragment>` or `<>`                     |
+| Multiple frameworks per-file | Yes                                        | No                                                 |
+| Modifying `<head>`           | Just use `<head>`                          | Per-framework (`<Head>`, `<svelte:head>`, etc)     |
+| Comment Style                | `<!-- HTML -->`                            | `{/* JavaScript */}`                               |
+| Special Characters           | `&nbsp;`                                   | `{'\xa0'}` or `{String.fromCharCode(160)}`         |
+| Attributes                   | `dash-case`                                | `camelCase`                                        |

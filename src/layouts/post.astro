@@ -7,14 +7,15 @@ import { formatDate } from '../util/date-format';
 
 const { title } = env;
 const { content } = Astro.props;
+const escapedTitle = content.title.replace(/<\/?em>/ig, '');
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{content.title} - {title}</title>
+    <title>{escapedTitle} - {title}</title>
     <Head 
-      title={content.title} 
+      title={escapedTitle} 
       description={content.description} 
       image={content.image} 
       canonicalURL={Astro.request.canonicalURL.href} 

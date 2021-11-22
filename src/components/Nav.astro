@@ -143,8 +143,11 @@ import { env } from '../environment';
     </div>
     <script>
       const idleClass = 'idle';
-      const homeLink = document.querySelector('#home');
       setInterval(() => {
+          const homeLink = document.querySelector('#home:not(:hover)');
+          if(!homeLink) {
+            return;
+          }
           homeLink.classList.add(idleClass);
           setTimeout(() => homeLink.classList.remove(idleClass), 2000);
         }

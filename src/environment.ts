@@ -1,4 +1,4 @@
 export const env = {
-  title: "Refact Blog",
+  title: "refact.blog",
   description: "Perpetual refactoring",
 };

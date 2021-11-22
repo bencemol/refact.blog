@@ -93,7 +93,7 @@
   --theme-footer-height: 6rem;
   --theme-selection-color: hsla(var(--color-gray-5), 1);
   --theme-selection-bg: hsla(var(--color-purple), var(--theme-accent-opacity));
-  --theme-code-selection-bg: hsla(var(--color-base-purple), 83%, var(--theme-accent-opacity));
+  --theme-code-selection-bg: hsla(var(--color-base-purple), 87%, var(--theme-accent-opacity));
 }
 
 body {
@@ -141,6 +141,7 @@ body {
   background-color: var(--theme-selection-bg);
 }
 
+code::selection,
 code *::selection,
 pre *::selection {
   background-color: var(--theme-code-selection-bg);

@@ -44,7 +44,7 @@ h6 {
 
 h1,
 h2 {
-  max-width: 40ch;
+  /* max-width: 40ch; */
 }
 
 :is(h2, h3):not(:first-child) {
@@ -207,13 +207,13 @@ pre > code {
 table,
 pre {
   position: relative;
-  --padding-block: 1rem;
+  --padding-block: 1.25rem;
   --padding-inline: var(--gutter);
-  padding: var(--padding-block) var(--padding-inline);
-  padding-right: calc(var(--padding-inline) * 2);
   font-family: var(--font-mono);
   margin-left: calc(var(--padding-inline) * -1);
   margin-right: calc(var(--padding-inline) * -1);
+  margin-top: var(--padding-block);
+  margin-bottom: var(--padding-block);
   line-height: 1.5;
   font-size: 0.85em;
   /* overflow-y: hidden;
@@ -223,17 +223,37 @@ pre {
 
 table {
   width: 100%;
-  padding: var(--padding-block) 0;
   margin: 0;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-/* Zebra striping */
-tr:nth-of-type(odd) {
-  background: var(--theme-bg-hover);
+tr td, tr th {
+  border-bottom: 2px solid var(--theme-accent);
+  padding: var(--padding-inline) var(--padding-block) ;
 }
+tr td:first-child, tr th:first-child {
+  border-left: 2px solid var(--theme-accent);
+}
+tr td:last-child, tr th:last-child {
+  border-right: 2px solid var(--theme-accent);
+}
+
+tr:first-child th:first-child {
+  border-top-left-radius: var(--border-radius);
+}
+tr:first-child th:last-child {
+  border-top-right-radius: var(--border-radius);
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius);
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius);
+}
+
 th {
-  background: var(--color-black);
+  background: var(--theme-accent);
   color: var(--theme-color);
   font-weight: bold;
 }
@@ -244,6 +264,8 @@ th {
 }
 
 pre {
+  padding: var(--padding-block) var(--padding-inline);
+  padding-right: calc(var(--padding-inline) * 2);
   background-color: var(--theme-code-bg);
   color: var(--theme-code-text);
 }

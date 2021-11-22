@@ -26,7 +26,7 @@ export async function getStaticPaths({paginate, rss}) {
     dest: '/feed/posts.xml'
   });
 
-  return paginate(allPosts,  { pageSize: 3 });
+  return paginate(allPosts,  { pageSize: 4 });
 }
 
 const { title, description } = env;
