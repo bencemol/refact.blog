@@ -168,6 +168,11 @@ strong {
   color: inherit;
 }
 
+em {
+  font-style: normal;
+  font-weight: initial;
+}
+
 /* Supporting Content */
 code {
   font-family: var(--font-mono);
