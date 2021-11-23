@@ -370,3 +370,7 @@ time {
 footer {
   padding: 0 var(--gutter);
 }
+
+ul, ol {
+  margin: 1.25rem 0;
+}
