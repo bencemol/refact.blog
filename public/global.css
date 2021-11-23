@@ -168,10 +168,15 @@ strong {
   color: inherit;
 }
 
-em {
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em {
   font-style: normal;
   font-weight: initial;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 /* Supporting Content */
