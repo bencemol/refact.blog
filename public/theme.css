@@ -84,8 +84,8 @@
   --theme-bg-hover: hsla(var(--color-gray-95), 1);
   --theme-bg-offset: hsla(var(--color-base-green), 94%, 1);
   --theme-bg-accent: hsla(var(--color-orange), var(--theme-accent-opacity));
-  --theme-code-inline-bg: hsla(var(--color-green), 1);
-  --theme-code-inline-text: hsla(var(--color-gray-95), 1);
+  --theme-code-inline-bg: var(--theme-accent);
+  --theme-code-inline-text: var(--theme-text);
   --theme-code-bg: hsla(var(--color-green), 1);
   --theme-code-text: hsla(var(--color-gray-95), 1);
   --theme-navbar-bg: hsla(var(--color-base-white), 100%, 1);
@@ -141,8 +141,6 @@ body {
   background-color: var(--theme-selection-bg);
 }
 
-code::selection,
-code *::selection,
 pre *::selection {
   background-color: var(--theme-code-selection-bg);
 }

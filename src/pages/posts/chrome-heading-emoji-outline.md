@@ -20,7 +20,12 @@ A simple `<span>` would be the best semantically, but since I'm generating my co
 
 ```html
 <style>
-  em {
+  h1 em,
+  h2 em,
+  h3 em,
+  h4 em,
+  h5 em,
+  h6 em {
     font-weight: initial;
     text-decoration: none;
   }
