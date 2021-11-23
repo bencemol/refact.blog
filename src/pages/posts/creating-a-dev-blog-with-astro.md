@@ -25,11 +25,11 @@ You can choose to hydrate specific components with javascript in the browser, ju
 
 | Strategy               | Hydration       | Prerendered               |
 | ---------------------- | --------------- | ------------------------- |
-| `client:load`          | on page load    | ✔️                        |
-| `client:idle`          | when main thread is free <br> [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) | ✔️                     |
-| `client:visible`       | when element enters viewport <br> [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)     | ✔️   |
-| `client:media={QUERY}` | when browser matches media query | ✔️   |
-| `client:only`          | on page load                     | ❌   |
+| `client:load`          | on page load    | <input type="checkbox" disabled checked />                        |
+| `client:idle`          | when main thread is free <br> [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) | <input type="checkbox" disabled checked />                     |
+| `client:visible`       | when element enters viewport <br> [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)     | <input type="checkbox" disabled checked />   |
+| `client:media={QUERY}` | when browser matches media query | <input type="checkbox" disabled checked />   |
+| `client:only`          | on page load                     | <input type="checkbox" disabled />    |
 
 ```astro
 ---
