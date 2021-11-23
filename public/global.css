@@ -228,7 +228,8 @@ pre {
 
 table {
   width: 100%;
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
   border-collapse: separate;
   border-spacing: 0;
 }
@@ -286,6 +287,15 @@ blockquote code:not([class*='language']) {
     margin-left: 0;
     margin-right: 0;
     border-radius: var(--border-radius);
+  }
+}
+
+@media (max-width: 37.75rem) {
+  table {
+    border-radius: var(--border-radius);
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
 
