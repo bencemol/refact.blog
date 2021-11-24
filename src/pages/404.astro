@@ -1,0 +1,28 @@
+---
+import Head from '../components/Head.astro';
+import { env } from '../environment';
+
+// page
+const { title, description } = env;
+
+---
+
+<html>
+  <head>
+    <Head
+      title={title}
+      description={description}
+    />
+  </head>
+
+  <body>
+
+    <main class="wrapper">
+        <h1>404</h1>
+        <p>😢</p>
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>

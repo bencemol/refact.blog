@@ -54,4 +54,4 @@ any of:
 - Web Components
 - Plain old HTML + Javascript
 
-I'm not sure building a site with multiple frameworks is a good idea, but flexibility is a good option down the road. You can also migrate your interactive *islands* on-by-one later. 
+I'm not sure building a site with multiple frameworks is a good idea, but flexibility is a good option down the road. You can always migrate your *islands* on-by-one later. 
