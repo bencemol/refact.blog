@@ -19,7 +19,7 @@ The build produces no javascript by default, rendering is done at build time, th
 
 ### What about interactivity?
 
-Sure, most content on the web could be rendered statically, but I'm not prepared to go back to plain old form submits. Astro solves [progressive enchacement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) through the [islands architecture](https://jasonformat.com/islands-architecture/). You can choose to hydrate specific components with javascript in the browser, just mark the component with the `client:` directive and select a hydration strategy.
+Sure, most content on the web could be rendered statically, but the web would be a pretty boring place without _some_ javascript. Astro solves [progressive enchacement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) through the [islands architecture](https://jasonformat.com/islands-architecture/). You can choose to hydrate specific components with javascript in the browser, just mark the component with the `client:` directive and select a hydration strategy.
 
 | Strategy | Hydration | Prerendered |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ But how does [Svelte](https://svelte.dev/) come into the picture?
 
 ### Framework agnostic
 
-Instead of forcing you to learn another client side framework, Astro gives you the option to use
+For components Astro gives you the option to use 
 any of:
 
 * React
@@ -53,4 +53,4 @@ any of:
 * Web Components
 * Plain old HTML + Javascript
 
-I'm not sure building a site with multiple frameworks is a good idea, but flexibility is a good option down the road. You can always migrate your _islands_ on-by-one later.
+Even mixing them is an option just install the corresponding renderer with npm. I'd like to explore this through small demo _islands_ in upcoming posts. 
