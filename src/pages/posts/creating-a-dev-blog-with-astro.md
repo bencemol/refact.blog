@@ -44,8 +44,7 @@ But how does [Svelte](https://svelte.dev/) come into the picture?
 
 ### Framework agnostic
 
-For components Astro gives you the option to use
-any of:
+To build your components, Astro gives you the option to use any of:
 
 - React
 - Svelte

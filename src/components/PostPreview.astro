@@ -5,8 +5,8 @@ import { formatDate } from '../util/date-format';
 export interface Props {
   post: CMS.Post;
 }
-const { post } = Astro.props;
-
+const { post } = Astro.props as Props;
+const escapedTitle = post.title.replace(/<\/?em>/ig, '');
 
 ---
 
@@ -20,7 +20,7 @@ const { post } = Astro.props;
   min-height: 200px;
   max-height: 400px;
   aspect-ratio: 16 / 9;
-  background-color: var(--theme-text-lighter);
+  background-color: var(--theme-accent);
   object-fit: cover;
 }
 
@@ -52,9 +52,9 @@ const { post } = Astro.props;
 </style>
 
 <article class="post">
-  <a class="link" href={post.url} aria-label={`Read ${post.title}`}>
+  <a class="link" href={post.url} aria-label={`Read ${escapedTitle}`}>
     { post.cover 
-      ? <img class="cover round" src={post.cover} alt={post.title} loading="lazy">
+      ? <img class="cover round" src={post.cover} alt={escapedTitle} loading="lazy">
       : null }
     <div class="data">
       <h2 class="title">{post.title}</h2>

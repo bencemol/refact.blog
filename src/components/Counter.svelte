@@ -22,9 +22,9 @@ div {
 </style>
 
 <div class="counter">
-  <button on:click={subtract}>-</button>
+  <button on:mousedown={subtract}>-</button>
   <div>{ count }</div>
-  <button on:click={add}>+</button>
+  <button on:mousedown={add}>+</button>
 </div>
 <div class="children">
   <slot />
