@@ -53,4 +53,4 @@ any of:
 * Web Components
 * Plain old HTML + Javascript
 
-Even mixing them is an option just install the corresponding renderer with npm. I will be  exploringthis through small demo _islands_ in upcoming posts. 
+Even mixing them is an option just install the corresponding renderer with npm. I will be  exploring this through small demo _islands_ in upcoming posts. 
