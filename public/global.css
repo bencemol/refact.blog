@@ -232,6 +232,7 @@ table {
   margin-right: 0;
   border-collapse: separate;
   border-spacing: 0;
+  font-family: var(--font-body);
 }
 
 tr td, tr th {
