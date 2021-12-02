@@ -24,10 +24,10 @@ Sure, most content on the web could be rendered statically, but the web would be
 
 | Strategy               | Hydration                                                                                                                            | Prerendered |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| `client:load`          | on page load                                                                                                                         | ✔️          |
-| `client:idle`          | when main thread is free <br> [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)     | ✔️          |
-| `client:visible`       | when element enters viewport <br> [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) | ✔️          |
-| `client:media={QUERY}` | when browser matches media query                                                                                                     | ✔️          |
+| `client:load`          | on page load                                                                                                                         | ✅          |
+| `client:idle`          | when main thread is free <br> [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)     | ✅          |
+| `client:visible`       | when element enters viewport <br> [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) | ✅          |
+| `client:media={QUERY}` | when browser matches media query                                                                                                     | ✅          |
 | `client:only`          | on page load                                                                                                                         | ❌          |
 
 ```astro
