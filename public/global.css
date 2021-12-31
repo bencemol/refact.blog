@@ -375,12 +375,3 @@ footer {
 ul, ol {
   margin: 1.25rem 0;
 }
-
-.cover {
-  width: 100%;
-  min-height: 200px;
-  max-height: 400px;
-  aspect-ratio: 16 / 9;
-  background-color: var(--theme-accent);
-  object-fit: cover;
-}

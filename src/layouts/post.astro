@@ -28,6 +28,14 @@ const escapedTitle = content.title.replace(/<\/?em>/ig, '');
       .heading {
         margin-bottom: var(--doc-padding);
       }
+      .cover {
+        width: 100%;
+        min-height: 200px;
+        max-height: 400px;
+        aspect-ratio: 16 / 9;
+        background-color: var(--theme-accent);
+        object-fit: cover;
+      }
       .title {
         margin: var(--gutter) 0;
       }
@@ -48,7 +56,7 @@ const escapedTitle = content.title.replace(/<\/?em>/ig, '');
     <CenteredLayout>
       <div id="grid-main">
         <section class="heading">
-          <img class="img cover round" src={content.cover} alt={escapedTitle}>
+          <img class="img cover round" src={content.cover} alt={escapedTitle} style="object-fit: cover;">
           <h2 class="title">{content.title}</h2>
           <time class="date" datetime={content.date}>{formatDate(content.date)}</time>
           <p class="description">{content.description}</p>
