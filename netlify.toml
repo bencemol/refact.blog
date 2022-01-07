@@ -1,3 +1,9 @@
 [build]
 publish = "dist"
 command = "npm run build"
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    cache-control = '''
+    public,
+    max-age=604800'''
