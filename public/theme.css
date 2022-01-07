@@ -88,7 +88,7 @@
   --theme-code-inline-text: var(--theme-text);
   --theme-code-bg: hsla(var(--color-green), 1);
   --theme-code-text: hsla(var(--color-gray-95), 1);
-  --theme-navbar-bg: hsla(var(--color-base-white), 100%, 1);
+  --theme-navbar-bg: var(--theme-accent);
   --theme-navbar-height: 6rem;
   --theme-footer-height: 6rem;
   --theme-selection-color: hsla(var(--color-gray-5), 1);
@@ -120,7 +120,6 @@ body {
     --theme-code-inline-text: hsla(var(--color-base-white), 100%, 1);
     --theme-code-bg: hsla(var(--color-green), 1);
     --theme-code-text: hsla(var(--color-base-white), 100%, 1);
-    --theme-navbar-bg: hsla(var(--color-gray-5), 1);
     --theme-selection-color: hsla(var(--color-base-white), 100%, 1);
     --theme-selection-bg: hsla(var(--color-purple), var(--theme-accent-opacity));
 
