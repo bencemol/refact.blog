@@ -59,7 +59,6 @@ const escapedTitle = content.title.replace(/<\/?em>/ig, '');
           <img class="img cover round" src={content.cover} alt={escapedTitle} style="object-fit: cover;">
           <h2 class="title">{content.title}</h2>
           <time class="date" datetime={content.date}>{formatDate(content.date)}</time>
-          <p class="description">{content.description}</p>
         </section>
         <article class="article">
           <slot/>
